@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 3rem 5rem;
+}
+
+.container {
+  border: 1px solid #222;
+  border-radius: 0.375em;
+  padding: 2rem 1rem;
+}
+
+/* ================= buttons section ================= */
+.btn {
+  --background-hue: 0;
+  --background-saturation: 0%;
+  --initial-background-lightness: 90%;
+  --background-lightness: var(--initial-background-lightness);
+  --border-lightness: calc(var(--initial-background-lightness) - 20%);
+
+  background-color: hsl(
+    var(--background-hue),
+    var(--background-saturation),
+    var(--background-lightness)
+  );
+  border: 1px solid
+    hsl(
+      var(--background-hue),
+      var(--background-saturation),
+      var(--border-lightness)
+    );
+  outline: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  margin: 2px;
+}
+
+.btn:hover,
+.btn:focus {
+  --background-lightness: calc(var(--initial-background-lightness) - 10%);
+
+  background-color: hsl(
+    var(--background-hue),
+    var(--background-saturation),
+    var(--background-lightness)
+  );
+  box-shadow: 0 0 3px 0
+    hsl(
+      var(--background-hue),
+      var(--background-saturation),
+      var(--border-lightness)
+    );
+}
+
+.btn.btn-primary {
+  --background-hue: 271;
+  --background-saturation: 70%;
+  --initial-background-lightness: 50%;
+  color: white;
+}
+
+.btn.btn-accent {
+  --background-hue: 210;
+  --background-saturation: 70%;
+  --initial-background-lightness: 50%;
+  color: white;
+}
+
+.btn.btn-danger {
+  --background-saturation: 60%;
+  --initial-background-lightness: 50%;
+  color: white;
+}
+
+.btn.btn-large {
+  font-size: 1.25rem;
+}
+
+.btn.btn-small {
+  font-size: 0.75rem;
+}
+
+.btn.btn-pill {
+  border-radius: 1000000px;
+}
+
+.btn.btn-custom {
+  background: linear-gradient(to right, hsl(271, 70%, 50%), hsl(210, 70%, 50%));
+  border-color: #222;
+  color: white;
+}
+
+.btn.btn-custom:hover,
+.btn.btn-custom:focus {
+  background-color: linear-gradient(
+    to right,
+    hsl(271, 70%, 40%),
+    hsl(210, 70%, 40%)
+  );
+  box-shadow: 0 0 3px 0 black;
+  border-color: black;
+}
+
+/* ================= inputs section ================= */
+.input {
+  --border-color: #aaa;
+
+  border: 1px solid var(--border-color);
+  outline: none;
+  font-size: inherit;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  margin: 2px;
+}
+
+.input:focus {
+  --border-color: #0af;
+  box-shadow: 0 0 5px var(--border-color);
+}
+
+.input.input-success {
+  --border-color: #27ae60;
+}
+
+.input.input-success:focus {
+  --border-color: #0f0;
+}
+
+.input.input-error {
+  --border-color: #eb5757;
+}
+
+.input.input-error:focus {
+  --border-color: #f00;
+}
+
+.input.input-large {
+  font-size: 1.25rem;
+}
+
+.input.input-small {
+  font-size: 0.75rem;
+}
+
+.input:disabled {
+  background-color: #eaeaea;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    margin: 3rem 8rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    margin: 3rem 12rem;
+  }
+}
